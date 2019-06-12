@@ -31,9 +31,9 @@ class WalletServiceImpl(val userWalletRepository: UserWalletRepository,
     override fun withdraw(withdrawRequest: WithdrawRequest) {
         walletValidator.validate(withdrawRequest)
         val userWallet = userWalletRepository.findById(withdrawRequest.userId).get()
-        userWallet.amountEUR += if (withdrawRequest.currency == Currency.EUR) withdrawRequest.amount else BigDecimal(0)
-        userWallet.amountUSD += if (withdrawRequest.currency == Currency.USD) withdrawRequest.amount else BigDecimal(0)
-        userWallet.amountGBP += if (withdrawRequest.currency == Currency.GBP) withdrawRequest.amount else BigDecimal(0)
+        userWallet.amountEUR -= if (withdrawRequest.currency == Currency.EUR) withdrawRequest.amount else BigDecimal(0)
+        userWallet.amountUSD -= if (withdrawRequest.currency == Currency.USD) withdrawRequest.amount else BigDecimal(0)
+        userWallet.amountGBP -= if (withdrawRequest.currency == Currency.GBP) withdrawRequest.amount else BigDecimal(0)
         userWalletRepository.save(userWallet)
     }
 

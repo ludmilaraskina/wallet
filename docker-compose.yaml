@@ -22,6 +22,7 @@ services:
       dockerfile: server/Dockerfile
     ports:
       - 8080:8080
+      - 8081:8081
       - 5005:5005
     environment:
       ACTIVE_PROFILE: docker
@@ -30,16 +31,17 @@ services:
       db:
         condition: service_healthy
     healthcheck:
-      test: ["CMD-SHELL", "curl http://localhost:8081/management/health"]
+      test: ["CMD", "curl", "http://localhost:8081/management/health"]
       interval: 10s
       timeout: 5s
-      retries: 5
+      retries: 10
 
   client:
     build:
       context: .
       dockerfile: client/Dockerfile
     environment:
+      ACTIVE_PROFILE: docker
       USER_AMOUNT: 3
       CONCURRENT_THREADS_PER_USER: 2
       ROUNDS_PER_THREAD: 4

@@ -1,1 +1,5 @@
 wallet.server.url: "http://localhost:8080/wallet/"
+
+---
+spring.profiles: docker
+wallet.server.url: "http://server:8080/wallet/"
