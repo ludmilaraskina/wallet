@@ -17,9 +17,9 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers.status
 import wallet.server.exception.InsufficientFundsException
-import wallet.server.model.Currency
-import wallet.server.model.DepositRequest
-import wallet.server.model.WithdrawRequest
+import wallet.api.model.Currency
+import wallet.api.model.DepositRequest
+import wallet.api.model.WithdrawRequest
 import java.math.BigDecimal
 
 

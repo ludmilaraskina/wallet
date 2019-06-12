@@ -1,8 +1,8 @@
 package wallet.server.service
 
-import wallet.server.model.Balance
-import wallet.server.model.DepositRequest
-import wallet.server.model.WithdrawRequest
+import wallet.api.model.Balance
+import wallet.api.model.DepositRequest
+import wallet.api.model.WithdrawRequest
 
 interface WalletService {
 

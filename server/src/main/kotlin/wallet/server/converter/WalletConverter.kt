@@ -2,7 +2,7 @@ package wallet.server.converter
 
 import org.springframework.stereotype.Service
 import wallet.server.entity.UserWallet
-import wallet.server.model.Balance
+import wallet.api.model.Balance
 
 @Service
 class WalletConverter {

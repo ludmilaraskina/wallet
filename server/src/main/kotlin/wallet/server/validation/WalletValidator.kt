@@ -2,8 +2,8 @@ package wallet.server.validation
 
 import org.springframework.stereotype.Service
 import wallet.server.exception.InsufficientFundsException
-import wallet.server.model.Currency
-import wallet.server.model.WithdrawRequest
+import wallet.api.model.Currency
+import wallet.api.model.WithdrawRequest
 import wallet.server.repository.UserWalletRepository
 import javax.transaction.Transactional
 

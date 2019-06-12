@@ -1,8 +1,11 @@
-FROM gradle:5.4.0-jdk11 as builder
+FROM openjdk:11-oracle as builder
 
-COPY --chown=gradle:gradle . .
+COPY . /wallet
+WORKDIR /wallet
 
-RUN gradle --no-daemon clean build
+RUN ./gradlew --no-daemon clean build
+RUN ls /wallet
+
 
 
 FROM openjdk:11-oracle
@@ -12,7 +15,7 @@ RUN useradd --no-log-init -r walletuser
 WORKDIR /app
 
 USER walletuser
-COPY --from=builder --chown=walletuser:walletuser /home/gradle/build/libs/server*.jar /app/server.jar
+COPY --from=builder --chown=walletuser:walletuser /wallet/server/build/libs/server.jar /app/server.jar
 
 ENV ACTIVE_PROFILE="default"
 ENV JVM_OPTS=""

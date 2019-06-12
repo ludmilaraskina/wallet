@@ -14,12 +14,12 @@ data class UserWallet(
     var userId: Long,
 
     @Column(name = "amount_EUR")
-    val amountEUR: BigDecimal = BigDecimal(0),
+    var amountEUR: BigDecimal = BigDecimal(0),
 
     @Column(name = "amount_USD")
-    val amountUSD: BigDecimal = BigDecimal(0),
+    var amountUSD: BigDecimal = BigDecimal(0),
 
     @Column(name = "amount_GBP")
-    val amountGBP: BigDecimal = BigDecimal(0)
+    var amountGBP: BigDecimal = BigDecimal(0)
 
 ) : GeneralEntity()

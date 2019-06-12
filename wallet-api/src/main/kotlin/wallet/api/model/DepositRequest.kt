@@ -1,4 +1,4 @@
-package wallet.server.model
+package wallet.api.model
 
 import java.math.BigDecimal
 

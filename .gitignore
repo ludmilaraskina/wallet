@@ -1,7 +1,10 @@
 .gradle
 /build/
 /server/build/
+/data/
+/server/data/
 /client/build/
+/wallet-api/build/
 !gradle/wrapper/gradle-wrapper.jar
 
 ### IntelliJ IDEA ###

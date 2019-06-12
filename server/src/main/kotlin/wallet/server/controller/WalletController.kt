@@ -3,9 +3,9 @@ package wallet.server.controller
 import wallet.server.service.WalletService
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
-import wallet.server.model.Balance
-import wallet.server.model.DepositRequest
-import wallet.server.model.WithdrawRequest
+import wallet.api.model.Balance
+import wallet.api.model.DepositRequest
+import wallet.api.model.WithdrawRequest
 
 @RestController
 @RequestMapping("/wallet")

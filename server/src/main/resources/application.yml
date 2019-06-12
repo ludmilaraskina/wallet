@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5435/walletdb
+    url: jdbc:postgresql://localhost:5432/walletdb
     username: postgres
-    password: root
+    password: postgres
   jpa:
     properties:
       hibernate:
@@ -13,3 +13,16 @@ spring:
           ddl-auto: validate
     database-platform: org.hibernate.dialect.PostgreSQL9Dialect
     open-in-view: false
+
+management:
+  server:
+    port: 8081
+  endpoints:
+    web:
+      base-path: /management
+      exposure:
+        include: '*'
+
+---
+spring.profiles: docker
+spring.datasource.url: jdbc:postgresql://db:5432/walletdb

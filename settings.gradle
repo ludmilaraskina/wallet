@@ -1,4 +1,6 @@
 rootProject.name = 'wallet'
 include 'server'
 include 'client'
+include 'api'
+include 'wallet-api'
 
