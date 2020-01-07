@@ -1,6 +1,7 @@
 FROM openjdk:11-oracle as builder
 
 COPY . /wallet
+RUN ls /wallet
 WORKDIR /wallet
 
 RUN ./gradlew --no-daemon clean build
